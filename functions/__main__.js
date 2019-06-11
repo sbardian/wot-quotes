@@ -23,6 +23,6 @@ module.exports = async (authHeader = '', context) => {
   }`;
 
   const data = await graphQLClient.request(query);
-
-  return data;
+  const index = Math.random() * data.quotes.length;
+  return data.quotes[Math.ceil(index) - 1];
 };
