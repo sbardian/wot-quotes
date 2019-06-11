@@ -4,7 +4,9 @@
   "description": "",
   "author": "sbardian <sbardian@gmail.com>",
   "main": "functions/__main__.js",
-  "dependencies": {},
+  "dependencies": {
+    "graphql-request": "^1.8.2"
+  },
   "private": true,
   "stdlib": {
     "build": "faaslang",
