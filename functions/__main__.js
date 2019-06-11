@@ -4,5 +4,5 @@
 * @returns {string}
 */
 module.exports = async (name = 'world', context) => {
-  return `hello ${name}`;
+  return `hello ${name} what's up?!`;
 };
