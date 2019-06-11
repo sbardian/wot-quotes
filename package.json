@@ -16,5 +16,8 @@
       "keys": [],
       "user": []
     }
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
   }
 }
