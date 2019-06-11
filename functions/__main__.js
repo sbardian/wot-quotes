@@ -1,8 +1,28 @@
 /**
-* A basic Hello World function
-* @param {string} name Who you're saying hello to
-* @returns {string}
-*/
-module.exports = async (name = 'world', context) => {
-  return `hello ${name} what's up?!`;
+ * A basic Hello World function
+ * @param {string} authHeader access token
+ * @returns {string}
+ */
+
+const GraphQLClient = require('graphql-request').GraphQLClient;
+
+module.exports = async (authHeader = '', context) => {
+  const endpoint = 'https://sib28.herokuapp.com/v1/graphql';
+  const graphQLClient = new GraphQLClient(endpoint, {
+    headers: {
+      'X-Hasura-Admin-Secret': authHeader,
+    },
+  });
+
+  const query = `{
+    quotes {
+      quote
+      id
+      credit
+    }
+  }`;
+
+  const data = await graphQLClient.request(query);
+
+  return data;
 };
