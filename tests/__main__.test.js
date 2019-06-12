@@ -1,5 +1,5 @@
 /* eslint-disable-next-line */
-const wotQuotes = require('./__main__');
+const wotQuotes = require('../functions/__main__');
 
 describe('Temp test', () => {
   it('should pass', async () => {
