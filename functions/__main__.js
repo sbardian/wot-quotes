@@ -7,7 +7,7 @@
 const GraphQLClient = require('graphql-request').GraphQLClient;
 var jwt = require('jsonwebtoken');
 
-module.exports = async context => {
+module.exports = async () => {
   const endpoint = 'https://sib28.herokuapp.com/v1/graphql';
   const token = jwt.sign(
     {
