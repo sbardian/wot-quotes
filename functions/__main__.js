@@ -5,12 +5,31 @@
  */
 
 const GraphQLClient = require('graphql-request').GraphQLClient;
+var jwt = require('jsonwebtoken');
 
-module.exports = async (authHeader = '', context) => {
+module.exports = async (
+  authHeader = 'shit sandwich dawg shit sandwich dawg shit sandwich dawg',
+  context,
+) => {
   const endpoint = 'https://sib28.herokuapp.com/v1/graphql';
+  console.log('authHeader >>> ', authHeader);
+  const token = jwt.sign(
+    {
+      sub: 'sbardian@gmail.com',
+      iat: parseInt(Date.now() / 1000, 10),
+      exp: parseInt(Date.now() / 1000, 10) + 120,
+      'https://hasura.io/jwt/claims': {
+        'x-hasura-allowed-roles': ['generic'],
+        'x-hasura-default-role': 'generic',
+        'x-hasura-user-id': 'sbardian@gmail.com',
+      },
+    },
+    authHeader,
+  );
+
   const graphQLClient = new GraphQLClient(endpoint, {
     headers: {
-      'X-Hasura-Admin-Secret': authHeader,
+      Authorization: `Bearer ${token}`,
     },
   });
 
