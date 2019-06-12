@@ -7,12 +7,8 @@
 const GraphQLClient = require('graphql-request').GraphQLClient;
 var jwt = require('jsonwebtoken');
 
-module.exports = async (
-  authHeader = 'shit sandwich dawg shit sandwich dawg shit sandwich dawg',
-  context,
-) => {
+module.exports = async context => {
   const endpoint = 'https://sib28.herokuapp.com/v1/graphql';
-  console.log('authHeader >>> ', authHeader);
   const token = jwt.sign(
     {
       sub: 'sbardian@gmail.com',
@@ -24,7 +20,7 @@ module.exports = async (
         'x-hasura-user-id': 'sbardian@gmail.com',
       },
     },
-    authHeader,
+    process.env.authHeader,
   );
 
   const graphQLClient = new GraphQLClient(endpoint, {
