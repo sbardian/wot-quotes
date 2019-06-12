@@ -1,8 +1,8 @@
 {
   "name": "wotQuotes",
-  "version": "0.0.0",
-  "description": "",
-  "author": "sbardian <sbardian@gmail.com>",
+  "version": "0.0.1",
+  "description": "Serverless function that returns random WOT quotes.",
+  "author": "Brian Andrews <sbardian@gmail.com>",
   "main": "functions/__main__.js",
   "private": true,
   "stdlib": {
