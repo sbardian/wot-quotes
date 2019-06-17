@@ -33,7 +33,7 @@ module.exports = async (credit = null, limit = null, random = false) => {
 
   if (credit && limit) {
     query = `{
-      quotes(where: {credit: {_like: "${credit}"}}, limit: ${limit}) {
+      quotes(where: {credit: {_like: "%${credit}%"}}, limit: ${limit}) {
         quote
         id
         credit
@@ -41,7 +41,7 @@ module.exports = async (credit = null, limit = null, random = false) => {
     }`;
   } else if (credit) {
     query = `{
-      quotes(where: {credit: {_like: "${credit}"}}) {
+      quotes(where: {credit: {_like: "%${credit}%"}}) {
         quote
         id
         credit
