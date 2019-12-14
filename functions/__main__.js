@@ -1,9 +1,3 @@
-/**
- * A basic Hello World function
- * @param {string} authHeader access token
- * @returns {string}
- */
-
 const GraphQLClient = require('graphql-request').GraphQLClient;
 var jwt = require('jsonwebtoken');
 
@@ -70,6 +64,7 @@ module.exports = async (credit = null, limit = null, random = false) => {
     const index = Math.random() * randomQuote.quotes.length;
     return randomQuote.quotes[Math.ceil(index) - 1];
   }
+
   const data = await graphQLClient.request(query);
   return data;
 };
