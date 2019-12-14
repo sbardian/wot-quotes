@@ -1,5 +1,5 @@
 {
-  "name": "wotQuotes",
+  "name": "wot-quotes",
   "version": "0.0.1",
   "description": "Serverless function that returns random WOT quotes.",
   "author": "Brian Andrews <sbardian@gmail.com>",
