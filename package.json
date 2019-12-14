@@ -27,12 +27,6 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint",
-      "pre-push": "yarn lint"
-    }
-  },
   "dependencies": {
     "graphql-request": "1.8.2",
     "jsonwebtoken": "8.5.1"
@@ -41,6 +35,8 @@
     "@babel/core": "7.7.5",
     "@babel/plugin-syntax-object-rest-spread": "7.7.4",
     "@babel/preset-env": "7.7.6",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
     "commitizen": "3.1.2",
@@ -50,6 +46,7 @@
     "eslint-plugin-prettier": "3.1.1",
     "husky": "3.1.0",
     "jest": "24.9.0",
+    "lint-staged": "^9.5.0",
     "prettier": "1.19.1",
     "semantic-release": "15.13.31"
   }
