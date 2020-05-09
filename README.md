@@ -6,6 +6,8 @@
 
 # Serverless function that returns Wheel of Time quotes!
 
+## [Demo](https://wot-quotes.netlify.app/)
+
 ## Built with Heroku, Hasura and stdlib.
 
 ## How to use
