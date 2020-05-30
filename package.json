@@ -28,7 +28,7 @@
     }
   },
   "dependencies": {
-    "graphql-request": "1.8.2",
+    "graphql-request": "2.0.0",
     "jsonwebtoken": "8.5.1"
   },
   "devDependencies": {
